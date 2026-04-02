@@ -1874,7 +1874,7 @@ bool UpdateInput(ImPlotPlot& plot) {
 
     // BUTTON STATE -----------------------------------------------------------
 
-    const ImGuiButtonFlags plot_button_flags = ImGuiButtonFlags_AllowOverlap
+    const ImGuiButtonFlags plot_button_flags = unsigned{ImGuiButtonFlags_AllowOverlap}
                                              | ImGuiButtonFlags_PressedOnClick
                                              | ImGuiButtonFlags_PressedOnDoubleClick
                                              | ImGuiButtonFlags_MouseButtonLeft
@@ -3107,7 +3107,7 @@ void EndPlot() {
                                                         legend_out ? plot.FrameRect : plot.PlotRect,
                                                         legend_out ? gp.Style.PlotPadding : gp.Style.LegendPadding
                                                         );
-        const ImGuiButtonFlags legend_button_flags = ImGuiButtonFlags_AllowOverlap
+        const ImGuiButtonFlags legend_button_flags = unsigned{ImGuiButtonFlags_AllowOverlap}
                                                     | ImGuiButtonFlags_PressedOnClick
                                                     | ImGuiButtonFlags_PressedOnDoubleClick
                                                     | ImGuiButtonFlags_MouseButtonLeft
@@ -3630,7 +3630,7 @@ void EndSubplots() {
         legend.Rect = ImRect(legend_pos, legend_pos + legend_size);
         legend.RectClamped = legend.Rect;
         const bool legend_scrollable = ClampLegendRect(legend.RectClamped,subplot.FrameRect, gp.Style.PlotPadding);
-        const ImGuiButtonFlags legend_button_flags = ImGuiButtonFlags_AllowOverlap
+        const ImGuiButtonFlags legend_button_flags = unsigned{ImGuiButtonFlags_AllowOverlap}
                                                     | ImGuiButtonFlags_PressedOnClick
                                                     | ImGuiButtonFlags_PressedOnDoubleClick
                                                     | ImGuiButtonFlags_MouseButtonLeft
