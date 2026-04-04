@@ -2135,6 +2135,8 @@ bool UpdateInput(ImPlotPlot& plot) {
             plot.Selected = false;
         }
     }
+    if (changed)
+        ImGui::SetDragAction();
     return changed;
 }
 
@@ -4007,6 +4009,8 @@ bool DragPoint(int n_id, double* x, double* y, const ImVec4& col, float radius, 
     PopPlotClipRect();
 
     ImGui::PopID();
+    if (modified)
+        ImGui::SetDragAction();
     return modified;
 }
 
@@ -4062,6 +4066,8 @@ bool DragLineX(int n_id, double* value, const ImVec4& col, float thickness, ImPl
     PopPlotClipRect();
 
     // ImGui::PopID();
+    if (modified)
+        ImGui::SetDragAction();
     return modified;
 }
 
@@ -4118,6 +4124,8 @@ bool DragLineY(int n_id, double* value, const ImVec4& col, float thickness, ImPl
     PopPlotClipRect();
 
     ImGui::PopID();
+    if (modified)
+        ImGui::SetDragAction();
     return modified;
 }
 
@@ -4264,6 +4272,8 @@ bool DragRect(int n_id, double* x_min, double* y_min, double* x_max, double* y_m
     }
     PopPlotClipRect();
     ImGui::PopID();
+    if (modified)
+        ImGui::SetDragAction();
     return modified;
 }
 
