@@ -1,3 +1,11 @@
+# Editor backups
+*~
+
+# Compilation outputs
+*.o
+*.exe
+*/example
+
 ## Dear ImGui artifacts
 imgui.ini
 imgui*.ini
